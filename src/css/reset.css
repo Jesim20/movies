@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	-webkit-overflow-scrolling: touch;
+	background: #c7c7c7;
 }
 ol, ul {
 	list-style: none;
