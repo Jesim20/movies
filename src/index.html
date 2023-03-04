@@ -1,9 +1,42 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en" ng-app="appMovies">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css"  type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" ></script>
+        <script src="js/controller.js"></script>
+        <title>AngularJs Demo</title>
+    </head>
+    <body>
+        <header class="header">
+            Prueba API AngularJS
+        </header>
     
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <div class="container" ng-controller="listMoviesController">
+        
+           
+            <div class="search-movies-container" >
+                <span class="back" onclick="location.href='/src/index.html'">Regresar</span>
+                <div class="search">
+                    <input type="search" ng-model="word" class="form-control" placeholder="Busca películas"/>
+                    <input type="button" value="Buscar" ng-click="searchMovies()" />
+                </div>
+            </div>
 
-<body>
-    
-    
-</body>
+            <ul class="list-movies-container" >
+                <li class="movie-item" ng-repeat="item in moviesList.results">
+                    <img class="poster" src=https://image.tmdb.org/t/p/w500/{{item.poster_path}}>
+                    <span class="title">{{item.title}}</span>
+                    <span class="id">{{item.id}}</span>
+                </li>
+            </ul>
+            
+        </div>
+
+        <footer class="footer">
+            <span ng-app ng-controller="listMoviesController"> {{date | date:'yyyy-MM-dd HH:mm:ss'}} </span>
+        </footer>
+       
+    </body>
 </html>
